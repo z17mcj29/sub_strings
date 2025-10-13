@@ -30,6 +30,11 @@ def compare(word1, word2)
   print word1_array
   word2_array = word2.split("")
   print word2_array
+  word_compare = word1_array && word2_array
+  print word_compare
+  word_compare = word_compare.join()
+  print word_compare
+  if word2 = word_compare then print "true" end
 end
 
-puts compare(test_word_one, test_word_two)
+p compare(test_word_one, test_word_two)
