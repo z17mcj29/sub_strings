@@ -25,39 +25,58 @@ test_word_two = "Fast"
 test_word_three = "F@st"
 
 def compare(word1, word2)
-  word1.downcase
-  word2.downcase
-  word1_array = word1.split("")
-  print word1_array
-  word2_array = word2.split("")
-  print word2_array
-  word_compare = word1_array && word2_array
-  print word_compare
-  word_compare = word_compare.join()
-  print word_compare
-  result = true if word2 == word_compare
+  result = false
+  word_1 = word1.dup
+  word_2 = word2.dup
+  word_1_array = word_1.downcase.split("")
+  word_2_array = word_2.downcase.split("")
+  comparison_array = word_1_array & word_2_array
+  comparison_array_to_string = comparison_array.join()
+  result = true if comparison_array_to_string == word2.downcase 
+  # result = false if comparison_array_to_string != word2.downcase
+  # This seems to work. I'm sure there is a better way that I don't
+  # understand yet. I'm learning about how object mutation works in Ruby.
   result
 end
 
-# p compare(test_word_one, test_word_three)
+p compare(test_word_one, test_word_two)
+p compare(test_word_one, test_word_three)
 
-def compare_2(word1, word2)
-  word2_comparison = word2.dup
-  word1_array = word1.downcase.split("")
-  print word1_array
-  puts " "
-  word2_array = word2.downcase.split("")
-  print word2_array
-  word_compare = (word1_array.join && word2_array).join()
-  puts " "
-  print word_compare
-  puts " "
-  print word1
-  puts " "
-  print word2
-  puts " "
-  print word2_comparison
-  true if word_compare == word2_comparison   
+# Saving this code for historical sake. I'm starting my function over because it went off the rails.
+# def compare(word1, word2)
+#   word1.downcase
+#   word2.downcase
+#   word1_array = word1.split("")
+#   print word1_array
+#   word2_array = word2.split("")
+#   print word2_array
+#   word_compare = word1_array && word2_array
+#   print word_compare
+#   word_compare = word_compare.join()
+#   print word_compare
+#   result = true if word2 == word_compare
+#   result
+# end
 
-end
-p compare_2("tested", "tvst")
+# # p compare(test_word_one, test_word_three)
+
+# def compare_2(word1, word2)
+#   word2_comparison = word2.dup
+#   word1_array = word1.downcase.split("")
+#   print word1_array
+#   puts " "
+#   word2_array = word2.downcase.split("")
+#   print word2_array
+#   word_compare = word1_array.join & word2_array
+#   puts " "
+#   print word_compare
+#   puts " "
+#   print word1
+#   puts " "
+#   print word2
+#   puts " "
+#   print word2_comparison
+#   true if word_compare == word2_comparison   
+
+# end
+# p compare_2("tested", "tvst")
