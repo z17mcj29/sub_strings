@@ -22,6 +22,7 @@
 
 test_word_one = "Faster"
 test_word_two = "Fast"
+test_word_three = "F@st"
 
 def compare(word1, word2)
   word1.downcase
@@ -34,7 +35,29 @@ def compare(word1, word2)
   print word_compare
   word_compare = word_compare.join()
   print word_compare
-  if word2 = word_compare then print "true" end
+  result = true if word2 == word_compare
+  result
 end
 
-p compare(test_word_one, test_word_two)
+# p compare(test_word_one, test_word_three)
+
+def compare_2(word1, word2)
+  word2_comparison = word2.dup
+  word1_array = word1.downcase.split("")
+  print word1_array
+  puts " "
+  word2_array = word2.downcase.split("")
+  print word2_array
+  word_compare = (word1_array.join && word2_array).join()
+  puts " "
+  print word_compare
+  puts " "
+  print word1
+  puts " "
+  print word2
+  puts " "
+  print word2_comparison
+  true if word_compare == word2_comparison   
+
+end
+p compare_2("tested", "tvst")
