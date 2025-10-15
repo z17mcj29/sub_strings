@@ -37,10 +37,20 @@ def compare(word1, word2)
   # This seems to work. I'm sure there is a better way that I don't
   # understand yet. I'm learning about how object mutation works in Ruby.
   result
+  # After building this I came across the #intersection method that I believe
+  # does the same thing my code I just made does. I am going to keep this
+  # for now but I will remember #intersection for the future.
 end
 
-p compare(test_word_one, test_word_two)
-p compare(test_word_one, test_word_three)
+# p compare(test_word_one, test_word_two)
+# p compare(test_word_one, test_word_three)
+
+def test(word1, word2)
+  compare(word1, word2)
+end
+
+# p test(test_word_one, test_word_two)
+# p test(test_word_one, test_word_three)
 
 # Saving this code for historical sake. I'm starting my function over because it went off the rails.
 # def compare(word1, word2)
@@ -80,3 +90,21 @@ p compare(test_word_one, test_word_three)
 
 # end
 # p compare_2("tested", "tvst")
+
+
+
+# I now need to figure out how to reduce two arrays together. I know how to convert the dictionary
+# to an array of words.
+
+def sub_strings(word, dictionary)
+  #convert word into an array
+  dictionary.reduce(Hash.new(0)) do |acc, word2|
+    if compare(word, word2)
+      acc[word2] += 1
+      acc
+    else
+      acc
+    end
+  end  
+end
+
