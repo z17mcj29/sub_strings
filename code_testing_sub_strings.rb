@@ -28,6 +28,9 @@ print common_elements_count
 
 def sub_strings(word, dictionary)
   #convert word into an array
+  word = word.split(" ")
+  word.each { |word|
+  
   dictionary.reduce(Hash.new(0)) do |acc, word2|
     if compare(word, word2)
       acc[word2] += 1
@@ -35,7 +38,9 @@ def sub_strings(word, dictionary)
     else
       acc
     end
+    
   end  
+}  
 end
 
 
@@ -55,4 +60,4 @@ def compare(word1, word2)
 
 end
 
-print sub_strings("below", dictionary)
+print sub_strings("below, go", dictionary)

@@ -108,3 +108,8 @@ def sub_strings(word, dictionary)
   end  
 end
 
+# I've been working on this problem for a few days. I think I have
+# figured out how to do the problem with one word, but haven't
+# figured out the array of words yet. I am going to continue on
+# to the next lesson and come back to this. I need more time to
+# think about how to progress.
